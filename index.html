@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ozaké Design Toulouse</title>
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+<style>
+
+	html,body,table{
+		width:100%;
+		height:100%;
+		padding:0;
+		margin:0;
+		border-collapse:collapse;
+		border:0;
+	}
+
+	body{
+		background-image:url("images/wallpaper-1114706.jpg");
+		background-position:top center;
+		background-attachment:fixed;
+	}
+
+	#scroller img{
+		width:50%;
+		display:block;
+		padding-left:38%;
+		padding-bottom:5%
+	}
+
+	#haut{
+	}
+	
+	#masque-haut{
+		background-color:#000;
+		position:fixed;
+		top:0px;
+		width:100%;
+	}
+
+	#masque-bas{
+		background-color:#000;
+		position:fixed;
+		bottom:0px;
+		width:100%;
+	}
+
+	#logo{
+		position:fixed;
+		left:200px;
+		top:240px;
+		padding:0;
+		width:300px;
+	}
+
+	#contact{
+		font:normal 22px/22px Abel;
+		position:fixed;
+		top:600px;
+		left:300px;
+	}
+
+	#contact:link,#contact:visited{
+		color:#000;
+		text-decoration:none;
+		padding:1px;
+	}
+
+
+	#contact:hover{
+		padding:0px;
+		border:1px dotted #000;
+	}
+
+
+	#contact:active{
+	}
+
+
+
+</style></head><body>
+<div id=haut></div><!-- actual filling -->
+<div id=masque-haut></div><!-- cover when scrolling -->
+<div id=contenu>
+	<a href=index.html><img id=logo src=images/ozake.svg></a>
+	<div id=menu>
+	</div>
+	<a id=contact href=contact.html>06 18 26 09 61 / EMAIL</a>
+	<div id=scroller>
+		<img src=images/accueil.jpg>
+		<img src=images/epicenter.jpg>
+		<img src=images/hot-tuna.jpg>
+		<img src=images/lscp.jpg>
+		<img src=images/epicenter.jpg>
+		<img src=images/hot-tuna.jpg>
+		<img src=images/lscp.jpg>
+		<img src=images/epicenter.jpg>
+		<img src=images/hot-tuna.jpg>
+		<img src=images/lscp.jpg>
+		<img src=images/epicenter.jpg>
+		<img src=images/hot-tuna.jpg>
+		<img src=images/lscp.jpg>
+
+	</div>
+</div>
+<div id=masque-bas></div><!-- cover when scrolling -->
+<script>
+
+	function cinema(){
+		w = $(window).width();
+		h = $(window).height();
+	
+		if (w/h<1.5){
+			x = w/1.5;
+			d = Math.round((h-x)/2);
+			$('#haut').css('height',d+'px');
+			$('#masque-haut').css('height',d+'px');
+			$('#masque-bas').css('height',d+'px');
+		}
+	}
+
+	$(window).resize(function(){
+		cinema();
+	});
+
+	cinema();
+
+</script></body></html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo (1)</title>
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+<style>
+
+	body{
+		background-image:url("images/wallpaper-1114706.jpg");
+		background-position:top center;
+		background-position:fixed;
+	}
+
+	div{
+		border:1px solid #666;
+	}
+
+	#logo{
+		width:30%;
+	}
+
+	#menu{
+		text-align:right;
+		width:30%;
+	}
+
+	#menu a:link{
+		display:block;
+	}
+
+	#contact{
+		width:30%;
+	}
+
+</style></head><body>
+    <script>
+ 
+   //alert ($(window).width() + $(window).height()); 
+ 
+    </script>
+<div id=square>
+</div>
+
+<div id=logo>
+<img src=images/ozake-design.png>
+</div>
+
+<div id="menu">
+thei si a test
+<a href="">graphisme</a>
+<a href="">dévéloppement</a>
+<a href="">traduction</a>
+<a href="">clientèle</a>
+<a href="">à propos</a>
+<a href="">prix</a>
+</div>
+
+<div id=contact>
+06 18 26 09 61 / EMAIL
+</div>
+</body>
+</html>

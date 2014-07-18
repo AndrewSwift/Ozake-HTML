@@ -209,12 +209,26 @@
 			$('#logo').css({width:large,top:haut,right:droite});
 	}
 
-	$(window).resize(function(){
-		cinema();
-	});
+	//$(window).resize(function(){
+	//	cinema();
+	//});
 
 	cinema($(window).width(),$(window).height());
 
 	dessiner($(window).width(),$(window).height());
+
+	setInterval(function(){haschanged()},300);
+
+	origw = $(window).width();
+	origh = $(window).height();
+
+	function haschanged(){
+		if (origw != $(window).width() || origh != $(window).height()){
+			dessiner($(window).width(),$(window).height());	
+			origw = $(window).width();
+		}
+	}
+
+
 
 </script></body></html>

@@ -13,10 +13,12 @@
 		border:0;
 	}
 
-	body{
-		background-image:url("images/wallpaper-1114706.jpg");
-		background-position:top center;
-		background-attachment:fixed;
+	html{
+		background: url(images/wallpaper-1114706.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 
 	#contenu{
@@ -148,11 +150,11 @@
 	// envoie le format de chaque élément de la page
 	//		$('#scroller').css({width:h, height:h});
 
-	// 3+25+66+6 = 100%
+	// 3+24+67+6 = 100%
 
 			myw = Math.round(h*1.5);
 			extra = Math.round((w-myw)/2);
-			thing = Math.round(.28*w);
+			thing = Math.round(.27*w);
 			$('#scroller').css({width:h, left:thing+extra});
 			marge = Math.round(h*.05);
 			$('#scroller img').css({width:h-marge,padding:marge/2});

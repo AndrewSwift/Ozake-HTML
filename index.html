@@ -21,6 +21,10 @@
 		background-size: cover;
 	}
 
+	#ombreg,#ombred,#ombreh,#ombreb{
+		position:fixed;
+	}
+
 	#contenu{
 		height:100%;
 	}
@@ -104,6 +108,10 @@
 <div id=haut></div><!-- actual filling -->
 <div id=masque-haut></div><!-- cover when scrolling -->
 <!-- <div id=contenu> -->
+	<img id=ombreg src=images/ombre-gauche.png>
+	<img id=ombred src=images/ombre-droite.png>
+	<img id=ombreh src=images/ombre-haute.png>
+	<img id=ombreb src=images/ombre-basse.png>
 	<a href=index.html><img id=logo src=images/ozake.svg></a>
 	<div id=menu>
 		<a href=x.html>graphisme</a>
@@ -150,7 +158,7 @@
 	// envoie le format de chaque élément de la page
 	//		$('#scroller').css({width:h, height:h});
 
-	// 3+24+67+6 = 100%
+	// 4+37+100+9 = 150%
 
 			myw = Math.round(h*1.5);
 			extra = Math.round((w-myw)/2);
@@ -159,6 +167,8 @@
 			marge = Math.round(h*.05);
 			$('#scroller img').css({width:h-marge,padding:marge/2});
 
+			// positionnement des 4 ombres
+			$('#ombred').css({width:10,height:70,left:80,top:100});
 	}
 
 	$(window).resize(function(){

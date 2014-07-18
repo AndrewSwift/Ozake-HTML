@@ -202,11 +202,17 @@
 			haut = Math.round(h*.78);
 			$('#ombreb').css({top:haut});
 
-			// logo is 35% wide, 39% down 4% in
+			// logo is 35% wide, 39% right edge is 112% in
 			large = Math.round(h*.35);
 			haut = Math.round(h*.39);
 			droite = extra+Math.round(h*1.12);
 			$('#logo').css({width:large,top:haut,right:droite});
+
+			// contact is 22.5% wide, 81.5% down, right edge is 112%
+			large = Math.round(h*.225);
+			haut = Math.round(h*.815);
+			droite = extra+Math.round(h*1.12);
+			$('#contact').css({width:large,top:haut,right:droite});
 	}
 
 	//$(window).resize(function(){

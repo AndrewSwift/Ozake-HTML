@@ -21,6 +21,10 @@
 		background-size: cover;
 	}
 
+	#logo img{
+		width:100%;
+	}
+
 	#ombreg,#ombred,#ombreh,#ombreb{
 		position:fixed;
 	}
@@ -116,7 +120,7 @@
 	<img id=ombred src=images/ombre-droite.png>
 	<img id=ombreh src=images/ombre-haute.png>
 	<img id=ombreb src=images/ombre-basse.png>
-	<a href=index.html><img id=logo src=images/ozake.svg></a>
+	<a id=logo href=index.html><img src=images/ozake.svg></a>
 	<div id=menu>
 		<a href=x.html>graphisme</a>
 		<a href=x.html>dévéloppement</a>
@@ -198,6 +202,11 @@
 			haut = Math.round(h*.78);
 			$('#ombreb').css({top:haut});
 
+			// logo is 35% wide, 39% down 4% in
+			large = Math.round(h*.35);
+			haut = Math.round(h*.39);
+			droite = extra+Math.round(h*1.12);
+			$('#logo').css({width:large,top:haut,right:droite});
 	}
 
 	$(window).resize(function(){

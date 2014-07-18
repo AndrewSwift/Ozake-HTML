@@ -1,6 +1,4 @@
-<!doctype html>
-<html>
-<head>
+<!doctype html><html><head>
     <meta charset="utf-8" />
     <title>Ozaké Design Toulouse</title>
     <script src="scripts/jquery-2.1.1.min.js"></script>
@@ -22,14 +20,12 @@
 	}
 
 	#scroller{
-		width:50%;
 		background-color:#fff;
 	}
 
 	#scroller img{
+		width:10px;
 		display:block;
-		padding-left:38%;
-		padding-bottom:5%
 	}
 
 	#haut{
@@ -51,18 +47,12 @@
 
 	#logo{
 		position:fixed;
-		left:200px;
-		top:240px;
-		padding:0;
-		width:300px;
 	}
 
 	#menu{
-		font:normal 22px/30px Abel;
+		font-family:Abel;
 		text-align:right;
 		position:fixed;
-		top:350px;
-		left:340px;
 	}
 
 	#menu a:link,#menu a:visited{
@@ -79,10 +69,8 @@
 	}
 
 	#contact{
-		font:normal 22px/22px Abel;
+		font-family:Abel;
 		position:fixed;
-		top:600px;
-		left:300px;
 	}
 
 	#contact:link,#contact:visited{
@@ -137,9 +125,8 @@
 <div id=masque-bas></div><!-- cover when scrolling -->
 <script>
 
-	function cinema(){
-		w = $(window).width();
-		h = $(window).height();
+	function cinema(w,h){
+	// rajoute des barres noires dessus/dessous si la page est trop étroite
 	
 		if (w/h<1.5){
 			x = w/1.5;
@@ -150,10 +137,17 @@
 		}
 	}
 
+	function dessiner(w,h){
+	// envoie le format de chaque élément de la page
+			$('#scroller').css({width:300, height:210});
+	}
+
 	$(window).resize(function(){
 		cinema();
 	});
 
-	cinema();
+	cinema($(window).width(),$(window).height());
+
+	dessiner($(window).width(),$(window).height());
 
 </script></body></html>

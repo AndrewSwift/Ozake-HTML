@@ -1,0 +1,26 @@
+#-------------------------------------------------------------------------------------------------------------------
+#
+#	rewrite rules are executed twice -- once on entry, and for the new redirected address
+#
+#	http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html#rewriteflags
+#
+#	301 = permanent, 302 = temporary
+#
+#-------------------------------------------------------------------------------------------------------------------
+#  parse html for php commands, send errors to nonexistant page to trigger OUR pretty error page
+
+#	options +followsymlinks
+#	rewriteengine on
+#	rewritebase /
+
+#-------------------------------------------------------------------------------------------------------------------
+
+#	rewriterule	(.*)/index.html 	$1/
+
+#-------------------------------------------------------------------------------------------------------------------
+
+#	rewriterule	^$ 				http://acswift.com/	[r=301,l,ne]
+
+
+	addtype application/x-httpd-php .html
+	addtype image/svg+xml .svg

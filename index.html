@@ -147,9 +147,13 @@
 	function dessiner(w,h){
 	// envoie le format de chaque élément de la page
 	//		$('#scroller').css({width:h, height:h});
+
+	// 3+25+66+6 = 100%
+
 			myw = Math.round(h*1.5);
 			extra = Math.round((w-myw)/2);
-			$('#scroller').css({width:h, left:300+extra});
+			thing = Math.round(.28*w);
+			$('#scroller').css({width:h, left:thing+extra});
 			marge = Math.round(h*.05);
 			$('#scroller img').css({width:h-marge,padding:marge/2});
 

@@ -19,13 +19,20 @@
 		background-attachment:fixed;
 	}
 
+	#contenu{
+		height:100%;
+	}
+
 	#scroller{
+		height:100%;
 		background-color:#fff;
+		position:relative;
 	}
 
 	#scroller img{
 		width:10px;
 		display:block;
+		background-color:#fff;
 	}
 
 	#haut{
@@ -94,7 +101,7 @@
 </style></head><body>
 <div id=haut></div><!-- actual filling -->
 <div id=masque-haut></div><!-- cover when scrolling -->
-<div id=contenu>
+<!-- <div id=contenu> -->
 	<a href=index.html><img id=logo src=images/ozake.svg></a>
 	<div id=menu>
 		<a href=x.html>graphisme</a>
@@ -121,7 +128,7 @@
 		<img src=images/lscp.jpg>
 
 	</div>
-</div>
+<!-- </div> -->
 <div id=masque-bas></div><!-- cover when scrolling -->
 <script>
 
@@ -139,7 +146,13 @@
 
 	function dessiner(w,h){
 	// envoie le format de chaque élément de la page
-			$('#scroller').css({width:300, height:210});
+	//		$('#scroller').css({width:h, height:h});
+			myw = Math.round(h*1.5);
+			extra = Math.round((w-myw)/2);
+			$('#scroller').css({width:h, left:300+extra});
+			marge = Math.round(h*.05);
+			$('#scroller img').css({width:h-marge,padding:marge/2});
+
 	}
 
 	$(window).resize(function(){

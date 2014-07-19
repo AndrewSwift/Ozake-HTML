@@ -89,13 +89,14 @@
 /* -------------------------------------------------- contact */
 
 	#contact{
-		font-family:Abel;
 		text-align:right;
-		border:1px dotted #000;
 		display:block;
 	}
-/*
+
 	#contact:link,#contact:visited{
+		font-family:Abel;
+		font-size:1.3vw;
+		white-space:nowrap;
 		color:#000;
 		text-decoration:none;
 		padding:1px;
@@ -105,5 +106,5 @@
 		padding:0px;
 		border:1px dotted #000;
 	}
-*/
+
 /* -------------------------------------------------- fin */

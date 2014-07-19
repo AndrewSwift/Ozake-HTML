@@ -19,6 +19,8 @@
 			marge = Math.round(h*.05);
 			$('#scroller img').css({width:h-marge,padding:marge/2});
 
+			$('#accueil').css({width:h,padding:0});
+
 			// positionnement des 2 ombres verticales
 			// verticals are 67% high, 25% down
 

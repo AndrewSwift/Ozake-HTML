@@ -109,11 +109,6 @@
 
 	conversion = workh/1000;
 
-	width  = 350;
-	right  = 1500-380; // from right edge
-	bottom = 1000-490; // from bottom edge
-
-	logodim = ['#logo','width',width,'right',right,'bottom',bottom];
 
 			// positionnement des 2 ombres verticales
 			// verticals are 67% high, 25% down
@@ -130,7 +125,12 @@
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
-	desslogo(logodim);
+
+	dimlogo   = ['#logo',  'width' ,350,'right',1500-380,'bottom',1000-490];
+	dimombreg = ['#ombreg','height',667,'right',1500-410,'top'   ,250     ];
+
+	desslogo(dimlogo);
+	desslogo(dimombreg);
 
 //	setInterval(function(){haschanged()},300);
 

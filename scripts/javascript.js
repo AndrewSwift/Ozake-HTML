@@ -92,16 +92,11 @@
 			logobottom = 490; // pixels if height is 1000px
 			logoright = 1200; // pixels from right edge
 
-			// ratio pour convertir de pourcent en pixels
-			ratio = realh/100;
-
-			// montant de supp' de chaque côté de notre page
-			extra = Math.round((realw-(realh*1.5))/2);
-
-			// logo is 35% wide, 39% right edge is 112% in
 			large = Math.round(realh*logowidth/1000);
-			bas = Math.round(realh*logobottom/1000);
-			droite = extra+Math.round(realh*logoright/1000);
+
+			bas = Math.round(realh*logobottom/1000) + extray;
+			droite = extra+Math.round(realh*logoright/1000)+ extrax;
+
 			$('#logo').css({width:large,bottom:bas,right:droite});
 
 	}
@@ -113,9 +108,18 @@
 	realw = $(window).width();
 	realh = $(window).height();
 
+	// if the screen is too wide, we use an artificial width
+	workw = Math.round((realw-(realh*1.5))/2);
+	if (realw / realh*1.5) workw = Math.round(realh*1.5);
+	else workw = realw;
+
 	// if the screen is too narrow, we use an artificial height
 	// and put black bars above and below
 	workh = narrow(realw,realh);
+
+	// offset to take into account window that is too wide or tall
+	extrax = 0;
+	extray = 0;
 
 //------------------------------------------------------- startup
 

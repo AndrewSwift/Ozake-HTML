@@ -21,17 +21,6 @@
 
 			$('#accueil').css({width:h,padding:0});
 
-			// positionnement des 2 ombres verticales
-			// verticals are 67% high, 25% down
-
-			marge = extra+Math.round((4+37+100)*ratio);
-			hauteur = Math.round(h*.67);
-			haut = Math.round(h*.25);
-			$('#ombred').css({left:marge,top:haut,height:hauteur});
-
-			marge = extra+Math.round((100+9)*ratio);
-			$('#ombreg').css({right:marge,top:haut,height:hauteur});
-
 			// positionnement des 2 ombres horizontales
 			// bottom of top shadow is 50% down
 			// top of bottom shadow is 78% down
@@ -81,19 +70,16 @@
 	// tells if the screen is too narrow (less than 3/2) and returns a "work height" if neccesary
 	}
 
-	function desslogo(obj,w,propx,x,propy,y){
+	function desslogo(obj){
 
-			w = Math.round(w * conversion);
-			x = Math.round(x * conversion + extrax);
-			y = Math.round(y * conversion + extray);
+			// logodim = ['#logo','width',350,'right',1500-380,'bottom',1000-490];
+			t = Math.round(obj[2] * conversion);
+			x = Math.round(obj[4] * conversion + extrax);
+			y = Math.round(obj[6] * conversion + extray);
 
-			str = 'width:'+w+'px;'+propx+':'+x+'px;'+propy+':'+y+'px;';
-			$(obj).attr('style',str);
+			str = obj[1]+':'+t+'px;'+obj[3]+':'+x+'px;'+obj[5]+':'+y+'px;';
+			$(obj[0]).attr('style',str);
 
-//alert(obj);
-//			$(obj).attr('style',str);
-
-			//$(obj).css({width:w,propx:x,propy:y});
 	}
 
 //------------------------------------------------------- global variables
@@ -127,11 +113,24 @@
 	logoright  = 1500-380; // from right edge
 	logobottom = 1000-490; // from bottom edge
 
+	logodim = ['#logo','width',350,'right',1500-380,'bottom',1000-490];
+
+			// positionnement des 2 ombres verticales
+			// verticals are 67% high, 25% down
+
+//			marge = extra+Math.round((4+37+100)*ratio);
+//			hauteur = Math.round(h*.67);
+//			haut = Math.round(h*.25);
+//			$('#ombred').css({left:marge,top:haut,height:hauteur});
+
+//			marge = extra+Math.round((100+9)*ratio);
+//			$('#ombreg').css({right:marge,top:haut,height:hauteur});
+
 //------------------------------------------------------- startup
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
-	desslogo('#logo',logowidth,'right',logoright,'bottom',logobottom);
+	desslogo(logodim);
 
 //	setInterval(function(){haschanged()},300);
 

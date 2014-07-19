@@ -56,7 +56,7 @@
 			workh = narrow(realw,realh);
 
 			cinema(realw,realh,workh);
-			dessinerlogo(realw,realh,workh);
+			//dessinerlogo(realw,realh,workh);
 		}
 	}
 
@@ -85,17 +85,19 @@
 	// envoie le format de chaque élément de la page
 	// 4+37+100+9 = 150%
 
-			logowidth = 350; // pixels if height is 1000px
-			logobottom = 490; // pixels if height is 1000px
-			logoright = 1200; // pixels from right edge
+			logowidth  = 350;
+			logoright  = 1500-380; // from right edge
+			logobottom = 1000-490; // from bottom edge
 
-			large = Math.round(realh*logowidth/1000);
+			large  = Math.round(logowidth  * conversion         );
+			droite = Math.round(logoright  * conversion + extrax);
+			bas    = Math.round(logobottom * conversion + extray);
 
-			bas = Math.round(realh*logobottom/1000) + extray;
-			droite = extra+Math.round(realh*logoright/1000)+ extrax;
+			// $('#logo').css({width:large,right:droite,bottom:bas});
 
-			$('#logo').css({width:large,bottom:bas,right:droite});
+//248 : 945 : 361
 
+			$('#logo').css({width:large,right:droite,bottom:bas});
 	}
 
 //------------------------------------------------------- global variables
@@ -123,12 +125,14 @@
 		extrax = 0;
 	}
 
+	conversion = workh/1000;
+
 //------------------------------------------------------- startup
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
 	dessinerlogo(realw,realh,workh);
 
-	setInterval(function(){haschanged()},300);
+//	setInterval(function(){haschanged()},300);
 
 //------------------------------------------------------- fin

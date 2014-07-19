@@ -59,21 +59,25 @@
 			realh = $(window).height();
 			workh = narrow(realw,realh);
 
-			cinema(realw,realh);
+			cinema(realw,realh,workh);
 			dessiner(realw,workh);
 		}
 	}
 
-	function cinema(w,h){
+	function cinema(realw,realh,workh){
 	// rajoute des barres noires dessus/dessous si la page est trop étroite
 	
-		// if the screen is less than 1.5 times wide than high (too narrow)
-		if (w/h<1.5){
-			x = w/1.5;
-			d = Math.round((h-x)/2);
+		if (realh != workh){
+			d = Math.round((realh-workh)/2);
+
 			$('#haut').css('height',d+'px');
 			$('#masque-haut').css('height',d+'px');
 			$('#masque-bas').css('height',d+'px');
+		}
+		else {
+			$('#haut').css('height','0px');
+			$('#masque-haut').css('height','0px');
+			$('#masque-bas').css('height','0px');
 		}
 	}
 
@@ -96,8 +100,7 @@
 
 //------------------------------------------------------- startup
 
-	cinema(realw,realh);
-
+	cinema(realw,realh,workh);
 	dessiner(realw,workh);
 
 	setInterval(function(){haschanged()},300);

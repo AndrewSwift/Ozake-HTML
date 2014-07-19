@@ -1,23 +1,4 @@
-//------------------------------------------------------- global variables
-
-	// to see if window changes size, we need to keep
-	// a record of its size at all times
-	origw = $(window).width();
-	origh = $(window).height();
-
 //------------------------------------------------------- functions
-
-	function cinema(w,h){
-	// rajoute des barres noires dessus/dessous si la page est trop étroite
-	
-		if (w/h<1.5){
-			x = w/1.5;
-			d = Math.round((h-x)/2);
-			$('#haut').css('height',d+'px');
-			$('#masque-haut').css('height',d+'px');
-			$('#masque-bas').css('height',d+'px');
-		}
-	}
 
 	function dessiner(w,h){
 	// envoie le format de chaque élément de la page
@@ -72,23 +53,53 @@
 			$('#contact').css({width:large,top:haut,right:droite});
 	}
 
-	//$(window).resize(function(){
-	//	cinema();
-	//});
-
-	cinema($(window).width(),$(window).height());
-
-	dessiner($(window).width(),$(window).height());
-
-	setInterval(function(){haschanged()},300);
-
 	function haschanged(){
-		if (origw != $(window).width() || origh != $(window).height()){
-			cinema($(window).width(),$(window).height());
-			dessiner($(window).width(),$(window).height());
-			origw = $(window).width();
+		if (realw != $(window).width() || realh != $(window).height()){
+			realw = $(window).width();
+			realh = $(window).height();
+			workh = narrow(realw,realh);
+
+			cinema(realw,realh);
+			dessiner(realw,workh);
 		}
 	}
 
+	function cinema(w,h){
+	// rajoute des barres noires dessus/dessous si la page est trop étroite
+	
+		// if the screen is less than 1.5 times wide than high (too narrow)
+		if (w/h<1.5){
+			x = w/1.5;
+			d = Math.round((h-x)/2);
+			$('#haut').css('height',d+'px');
+			$('#masque-haut').css('height',d+'px');
+			$('#masque-bas').css('height',d+'px');
+		}
+	}
+
+	function narrow(w,h){
+		if (w/h<1.5) x = w/1.5;
+		else x = h;
+		return Math.round(x);
+	}
+
+//------------------------------------------------------- global variables
+
+	// to see if window changes size, we need to keep
+	// a record of its size at all times
+	realw = $(window).width();
+	realh = $(window).height();
+
+	// if the screen is too narrow, we use an artificial height
+	// and put black bars above and below
+	workh = narrow(realw,realh);
+
+//------------------------------------------------------- startup
+
+	cinema(realw,realh);
+
+	dessiner(realw,workh);
+
+	setInterval(function(){haschanged()},300);
 
 //------------------------------------------------------- fin

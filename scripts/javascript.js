@@ -81,19 +81,20 @@
 	// tells if the screen is too narrow (less than 3/2) and returns a "work height" if neccesary
 	}
 
-	function desslogo(realw,realh,workh){
-	// envoie le format de chaque élément de la page
-	// 4+37+100+9 = 150%
+	function desslogo(obj,w,propx,x,propy,y){
 
-			logowidth  = 350;
-			logoright  = 1500-380; // from right edge
-			logobottom = 1000-490; // from bottom edge
+			w = Math.round(w * conversion);
+			x = Math.round(x * conversion + extrax);
+			y = Math.round(y * conversion + extray);
 
-			large  = Math.round(logowidth  * conversion         );
-			droite = Math.round(logoright  * conversion + extrax);
-			bas    = Math.round(logobottom * conversion + extray);
+			str = 'width:'+w+';'+propx+':'+x+';'+propy+':'+y;
+			str = 'border: solid 1px #0000ff; background-color: #ffff00;';
+			$(obj).attr('style',str);
 
-			$('#logo').css({width:large,right:droite,bottom:bas});
+//alert(obj);
+//			$(obj).attr('style',str);
+
+			//$(obj).css({width:w,propx:x,propy:y});
 	}
 
 //------------------------------------------------------- global variables
@@ -123,11 +124,15 @@
 
 	conversion = workh/1000;
 
+	logowidth  = 350;
+	logoright  = 1500-380; // from right edge
+	logobottom = 1000-490; // from bottom edge
+
 //------------------------------------------------------- startup
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
-	desslogo(realw,realh,workh);
+	desslogo('#logo',logowidth,'right',logoright,'bottom',logobottom);
 
 //	setInterval(function(){haschanged()},300);
 

@@ -73,7 +73,7 @@
 /* -------------------------------------------------- menu */
 
 	#menu{
-		font-family:Abel;
+		font:normal 0.25em/1.5em Abel;
 		text-align:right;
 	}
 
@@ -94,7 +94,7 @@
 
 	#contact{
 		text-align:right;
-		font:normal 1.25vw/1.25vw Abel;
+		font:normal 0.25em/0.25em Abel;
 		vertical-align:5vw;
 		white-space:nowrap;
 	}

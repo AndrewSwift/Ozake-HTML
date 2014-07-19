@@ -56,7 +56,7 @@
 			workh = narrow(realw,realh);
 
 			cinema(realw,realh,workh);
-			//dessinerlogo(realw,realh,workh);
+			//desslogo(realw,realh,workh);
 		}
 	}
 
@@ -81,7 +81,7 @@
 	// tells if the screen is too narrow (less than 3/2) and returns a "work height" if neccesary
 	}
 
-	function dessinerlogo(realw,realh,workh){
+	function desslogo(realw,realh,workh){
 	// envoie le format de chaque élément de la page
 	// 4+37+100+9 = 150%
 
@@ -92,10 +92,6 @@
 			large  = Math.round(logowidth  * conversion         );
 			droite = Math.round(logoright  * conversion + extrax);
 			bas    = Math.round(logobottom * conversion + extray);
-
-			// $('#logo').css({width:large,right:droite,bottom:bas});
-
-//248 : 945 : 361
 
 			$('#logo').css({width:large,right:droite,bottom:bas});
 	}
@@ -131,7 +127,7 @@
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
-	dessinerlogo(realw,realh,workh);
+	desslogo(realw,realh,workh);
 
 //	setInterval(function(){haschanged()},300);
 

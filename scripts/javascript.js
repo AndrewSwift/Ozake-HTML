@@ -105,6 +105,7 @@
 	dimombreh = ['#ombreh','width',1700,'left',-100,'bottom'     ,500     ];
 	dimombreb = ['#ombreb','width',1700,'left',-100,'top'        ,780     ];
 
+	dimmenu    = ['#menu   ','height',550,'right',1500-380,'top',525];
 	dimcontact = ['#contact','height',25,'right',1500-380,'top',815];
 
 	desslogo(dimlogo);
@@ -112,6 +113,7 @@
 	desslogo(dimombred);
 	desslogo(dimombreh);
 	desslogo(dimombreb);
+	desslogo(dimmenu);
 	desslogo(dimcontact);
 
 			// contact is 22.5% wide, 81.5% down, right edge is 112%

@@ -57,10 +57,6 @@
 		}
 	}
 
-	function narrow(w,h){
-	// tells if the screen is too narrow (less than 3/2) and returns a "work height" if neccesary
-	}
-
 	function desslogo(obj){
 
 			// logodim = ['#logo','width',350,'right',1500-380,'bottom',1000-490];

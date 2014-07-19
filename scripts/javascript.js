@@ -49,24 +49,6 @@
 			$('#contact').css({width:large,top:haut,right:droite});
 	}
 
-	function dessinerlogo(w,h){
-	// envoie le format de chaque élément de la page
-	// 4+37+100+9 = 150%
-
-			// ratio pour convertir de pourcent en pixels
-			ratio = h/100;
-
-			// montant de supp' de chaque côté de notre page
-			extra = Math.round((w-(h*1.5))/2);
-
-			// logo is 35% wide, 39% right edge is 112% in
-			large = Math.round(h*.35);
-			haut = Math.round(h*.39);
-			droite = extra+Math.round(h*1.12);
-			$('#logo').css({width:large,top:haut,right:droite});
-
-	}
-
 	function haschanged(){
 		if (realw != $(window).width() || realh != $(window).height()){
 			realw = $(window).width();
@@ -74,7 +56,7 @@
 			workh = narrow(realw,realh);
 
 			cinema(realw,realh,workh);
-			dessiner(realw,workh);
+			dessinerlogo(realw,realh,workh);
 		}
 	}
 
@@ -102,6 +84,28 @@
 		return Math.round(x);
 	}
 
+	function dessinerlogo(realw,realh,workh){
+	// envoie le format de chaque élément de la page
+	// 4+37+100+9 = 150%
+
+			logowidth = 350; // pixels if height is 1000px
+			logobottom = 490; // pixels if height is 1000px
+			logoright = 1200; // pixels from right edge
+
+			// ratio pour convertir de pourcent en pixels
+			ratio = realh/100;
+
+			// montant de supp' de chaque côté de notre page
+			extra = Math.round((realw-(realh*1.5))/2);
+
+			// logo is 35% wide, 39% right edge is 112% in
+			large = Math.round(realh*logowidth/1000);
+			bas = Math.round(realh*logobottom/1000);
+			droite = extra+Math.round(realh*logoright/1000);
+			$('#logo').css({width:large,bottom:bas,right:droite});
+
+	}
+
 //------------------------------------------------------- global variables
 
 	// to see if window changes size, we need to keep
@@ -117,7 +121,7 @@
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
-	dessinerlogo(realw,workh);
+	dessinerlogo(realw,realh,workh);
 
 	setInterval(function(){haschanged()},300);
 

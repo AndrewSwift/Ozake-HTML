@@ -128,9 +128,11 @@
 
 	dimlogo   = ['#logo',  'width' ,350,'right',1500-380,'bottom',1000-490];
 	dimombreg = ['#ombreg','height',667,'right',1500-410,'top'   ,250     ];
+	dimombred = ['#ombred','height',667,'left' ,1410    ,'top'   ,250     ];
 
 	desslogo(dimlogo);
 	desslogo(dimombreg);
+	desslogo(dimombred);
 
 //	setInterval(function(){haschanged()},300);
 

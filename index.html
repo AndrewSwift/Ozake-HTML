@@ -1,126 +1,23 @@
 <!doctype html><html><head>
+
     <meta charset="utf-8" />
     <title>Ozaké Design Toulouse</title>
+	<base href="file:///Users/Local/Desktop/Ozaké HTML/">
+	<link rel="stylesheet" type="text/css" href="style.css">
     <script src="scripts/jquery-2.1.1.min.js"></script>
-<style>
 
-	html,body,table{
-		width:100%;
-		height:100%;
-		padding:0;
-		margin:0;
-		border-collapse:collapse;
-		border:0;
-	}
+</head><body>
 
-	html{
-		background: url(images/wallpaper-1114706.jpg) no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-	}
+	<div id=haut></div><!-- actual filling -->
+	<div id=masque-haut></div><!-- cover when scrolling -->
 
-	#logo img{
-		width:100%;
-	}
-
-	#ombreg,#ombred,#ombreh,#ombreb{
-		position:fixed;
-	}
-
-	#ombreh,#ombreb{
-		width:100%;
-	}
-
-	#contenu{
-		height:100%;
-	}
-
-	#scroller{
-		height:100%;
-		background-color:#fff;
-		position:relative;
-	}
-
-	#scroller img{
-		width:10px;
-		display:block;
-		background-color:#fff;
-	}
-
-	#haut{
-	}
-	
-	#masque-haut{
-		background-color:#000;
-		position:fixed;
-		top:0px;
-		width:100%;
-	}
-
-	#masque-bas{
-		background-color:#000;
-		position:fixed;
-		bottom:0px;
-		width:100%;
-	}
-
-	#logo{
-		position:fixed;
-	}
-
-	#menu{
-		font-family:Abel;
-		text-align:right;
-		position:fixed;
-	}
-
-	#menu a:link,#menu a:visited{
-		text-transform:uppercase;
-		display:block;
-		text-decoration:none;
-		color:#000;
-		padding:1px;
-	}
-
-	#menu a:hover{
-		padding:0px;
-		border:1px dotted #000;
-	}
-
-	#contact{
-		font-family:Abel;
-		position:fixed;
-	}
-
-	#contact:link,#contact:visited{
-		color:#000;
-		text-decoration:none;
-		padding:1px;
-	}
-
-
-	#contact:hover{
-		padding:0px;
-		border:1px dotted #000;
-	}
-
-
-	#contact:active{
-	}
-
-
-
-</style></head><body>
-<div id=haut></div><!-- actual filling -->
-<div id=masque-haut></div><!-- cover when scrolling -->
-<!-- <div id=contenu> -->
 	<img id=ombreg src=images/ombre-gauche.png>
 	<img id=ombred src=images/ombre-droite.png>
 	<img id=ombreh src=images/ombre-haute.png>
 	<img id=ombreb src=images/ombre-basse.png>
-	<a id=logo href=index.html><img src=images/ozake.svg></a>
+
+	<a id=logo href=/><img src=images/ozake.svg></a>
+
 	<div id=menu>
 		<a href=x.html>graphisme</a>
 		<a href=x.html>dévéloppement</a>
@@ -129,7 +26,9 @@
 		<a href=x.html>à propos</a>
 		<a href=x.html>prix</a>
 	</div>
+
 	<a id=contact href=contact.html>06 18 26 09 61 / EMAIL</a>
+
 	<div id=scroller>
 		<img src=images/accueil.jpg>
 		<img src=images/epicenter.jpg>
@@ -144,97 +43,10 @@
 		<img src=images/epicenter.jpg>
 		<img src=images/hot-tuna.jpg>
 		<img src=images/lscp.jpg>
-
 	</div>
-<!-- </div> -->
-<div id=masque-bas></div><!-- cover when scrolling -->
-<script>
 
-	function cinema(w,h){
-	// rajoute des barres noires dessus/dessous si la page est trop étroite
-	
-		if (w/h<1.5){
-			x = w/1.5;
-			d = Math.round((h-x)/2);
-			$('#haut').css('height',d+'px');
-			$('#masque-haut').css('height',d+'px');
-			$('#masque-bas').css('height',d+'px');
-		}
-	}
+	<div id=masque-bas></div><!-- cover when scrolling -->
 
-	function dessiner(w,h){
-	// envoie le format de chaque élément de la page
-	// 4+37+100+9 = 150%
+	<script src="scripts/javascript.js"></script>
 
-			// ratio pour convertir de pourcent en pixels
-			ratio = h/100;
-
-			// montant de supp' de chaque côté de notre page
-			extra = Math.round((w-(h*1.5))/2);
-
-			// positionnement des images de portfolio
-			marge = Math.round((4+37)*ratio);
-
-			$('#scroller').css({width:h, left:extra+marge});
-
-			// marge blanche autour des images de portfolio
-			marge = Math.round(h*.05);
-			$('#scroller img').css({width:h-marge,padding:marge/2});
-
-			// positionnement des 2 ombres verticales
-			// verticals are 67% high, 25% down
-
-			marge = extra+Math.round((4+37+100)*ratio);
-			hauteur = Math.round(h*.67);
-			haut = Math.round(h*.25);
-			$('#ombred').css({left:marge,top:haut,height:hauteur});
-
-			marge = extra+Math.round((100+9)*ratio);
-			$('#ombreg').css({right:marge,top:haut,height:hauteur});
-
-			// positionnement des 2 ombres horizontales
-			// bottom of top shadow is 50% down
-			// top of bottom shadow is 78% down
-
-			bas = Math.round(h*.5);
-			$('#ombreh').css({bottom:bas});
-
-			haut = Math.round(h*.78);
-			$('#ombreb').css({top:haut});
-
-			// logo is 35% wide, 39% right edge is 112% in
-			large = Math.round(h*.35);
-			haut = Math.round(h*.39);
-			droite = extra+Math.round(h*1.12);
-			$('#logo').css({width:large,top:haut,right:droite});
-
-			// contact is 22.5% wide, 81.5% down, right edge is 112%
-			large = Math.round(h*.225);
-			haut = Math.round(h*.815);
-			droite = extra+Math.round(h*1.12);
-			$('#contact').css({width:large,top:haut,right:droite});
-	}
-
-	//$(window).resize(function(){
-	//	cinema();
-	//});
-
-	cinema($(window).width(),$(window).height());
-
-	dessiner($(window).width(),$(window).height());
-
-	setInterval(function(){haschanged()},300);
-
-	origw = $(window).width();
-	origh = $(window).height();
-
-	function haschanged(){
-		if (origw != $(window).width() || origh != $(window).height()){
-			dessiner($(window).width(),$(window).height());	
-			origw = $(window).width();
-		}
-	}
-
-
-
-</script></body></html>
+</body></html>

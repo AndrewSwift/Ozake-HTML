@@ -50,9 +50,6 @@
 	#haut{
 	}
 
-#haut{
-	}
-	
 	#masque-haut{
 		background-color:#000;
 		position:fixed;
@@ -67,9 +64,13 @@
 		width:100%;
 	}
 
+/* -------------------------------------------------- logo */
+
 	#logo{
 		position:fixed;
 	}
+
+/* -------------------------------------------------- menu */
 
 	#menu{
 		font-family:Abel;
@@ -77,7 +78,7 @@
 		position:fixed;
 	}
 
-#menu a:link,#menu a:visited{
+	#menu a:link,#menu a:visited{
 		text-transform:uppercase;
 		display:block;
 		text-decoration:none;
@@ -85,10 +86,12 @@
 		padding:1px;
 	}
 
-#menu a:hover{
+	#menu a:hover{
 		padding:0px;
 		border:1px dotted #000;
 	}
+
+/* -------------------------------------------------- contact */
 
 	#contact{
 		font-family:Abel;
@@ -102,13 +105,9 @@
 	}
 
 
-	#contact:hover{
+	#contact:hover,#contact:active{
 		padding:0px;
 		border:1px dotted #000;
-	}
-
-
-	#contact:active{
 	}
 
 /* -------------------------------------------------- fin */

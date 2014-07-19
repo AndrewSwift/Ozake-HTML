@@ -80,7 +80,8 @@
 
 	function haschanged(){
 		if (origw != $(window).width() || origh != $(window).height()){
-			dessiner($(window).width(),$(window).height());	
+			cinema($(window).width(),$(window).height());
+			dessiner($(window).width(),$(window).height());
 			origw = $(window).width();
 		}
 	}

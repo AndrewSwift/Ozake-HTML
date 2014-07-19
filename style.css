@@ -52,9 +52,6 @@
 		background-color:#fff;
 	}
 
-	#haut{
-	}
-
 	#masque-haut{
 		background-color:#000;
 		position:fixed;
@@ -93,18 +90,20 @@
 
 	#contact{
 		font-family:Abel;
+		text-align:right;
+		border:1px dotted #000;
+		display:block;
 	}
-
+/*
 	#contact:link,#contact:visited{
 		color:#000;
 		text-decoration:none;
 		padding:1px;
 	}
 
-
 	#contact:hover,#contact:active{
 		padding:0px;
 		border:1px dotted #000;
 	}
-
+*/
 /* -------------------------------------------------- fin */

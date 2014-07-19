@@ -22,11 +22,6 @@
 			$('#accueil').css({width:h,padding:0});
 
 
-			// contact is 22.5% wide, 81.5% down, right edge is 112%
-			large = Math.round(h*.225);
-			haut = Math.round(h*.815);
-			droite = extra+Math.round(h*1.12);
-			$('#contact').css({width:large,top:haut,right:droite});
 	}
 
 	function haschanged(){
@@ -110,22 +105,21 @@
 	dimombreh = ['#ombreh','width',1700,'left',-100,'bottom'     ,500     ];
 	dimombreb = ['#ombreb','width',1700,'left',-100,'top'        ,780     ];
 
+	dimcontact = ['#contact','width',225,'right',1500-380,'top',815];
+
 	desslogo(dimlogo);
 	desslogo(dimombreg);
 	desslogo(dimombred);
 	desslogo(dimombreh);
 	desslogo(dimombreb);
+	desslogo(dimcontact);
+
+			// contact is 22.5% wide, 81.5% down, right edge is 112%
+//			large = Math.round(h*.225);
+//			haut = Math.round(h*.815);
+//			droite = extra+Math.round(h*1.12);
+//			$('#contact').css({width:large,top:haut,right:droite});
 
 //	setInterval(function(){haschanged()},300);
-
-			// positionnement des 2 ombres horizontales
-			// bottom of top shadow is 50% down
-			// top of bottom shadow is 78% down
-
-//			bas = Math.round(h*.5);
-//			$('#ombreh').css({bottom:bas});
-
-//			haut = Math.round(h*.78);
-//			$('#ombreb').css({top:haut});
 
 //------------------------------------------------------- fin

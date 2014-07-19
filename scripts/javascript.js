@@ -41,6 +41,25 @@
 		if (realh != workh){
 			d = Math.round((realh-workh)/2);
 
+			topp = workh+d;
+
+			$('#haut').css('height',d+'px');
+			$('#masque-haut').css('height',d+'px');
+			$('#masque-bas').css('top',topp+'px');
+		}
+		else {
+			$('#haut').css('height','0px');
+			$('#masque-haut').css('height','0px');
+			$('#masque-bas').css('height','0px');
+		}
+	}
+
+	function cinema_old(realw,realh,workh){
+	// rajoute des barres noires dessus/dessous si la page est trop étroite
+	
+		if (realh != workh){
+			d = Math.round((realh-workh)/2);
+
 			$('#haut').css('height',d+'px');
 			$('#masque-haut').css('height',d+'px');
 			$('#masque-bas').css('height',d+'px');
@@ -100,13 +119,13 @@
 	fontsize = Math.round(100*conversion);
 	$('body').css('font','normal '+fontsize+'px/'+fontsize+'px Abel');
 
-	dimlogo   = ['#logo',  'width' ,350,'right',1500-380,'bottom',1000-490];
+	dimlogo   = ['#logo',  'width' ,350,'right',1500-380,'top',374];
 
-	dimombreg = ['#ombreg','height',667,'right',1500-410,'top'   ,250     ];
-	dimombred = ['#ombred','height',667,'left' ,1410    ,'top'   ,250     ];
+	dimombreg = ['#ombreg','height',667,'right',1500-410,'top',250 ];
+	dimombred = ['#ombred','height',667,'left' ,1410    ,'top',250 ];
 
-	dimombreh = ['#ombreh','width',1700,'left',-100,'bottom'     ,500     ];
-	dimombreb = ['#ombreb','width',1700,'left',-100,'top'        ,780     ];
+	dimombreh = ['#ombreh','width',1700,'left',-100,     'top' ,440];
+	dimombreb = ['#ombreb','width',1700,'left',-100,     'top' ,780];
 
 	dimmenu    = ['#menu   ','width',170,'right',1500-380,'top',525];
 	dimcontact = ['#contact','height',25,'right',1500-380,'top',815];
@@ -118,13 +137,5 @@
 	desslogo(dimombreb);
 	desslogo(dimmenu);
 	desslogo(dimcontact);
-
-			// contact is 22.5% wide, 81.5% down, right edge is 112%
-//			large = Math.round(h*.225);
-//			haut = Math.round(h*.815);
-//			droite = extra+Math.round(h*1.12);
-//			$('#contact').css({width:large,top:haut,right:droite});
-
-//	setInterval(function(){haschanged()},300);
 
 //------------------------------------------------------- fin

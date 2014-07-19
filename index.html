@@ -8,6 +8,7 @@
 
 </head><body>
 
+	<div id=background></div>
 	<div id=haut></div><!-- actual filling -->
 
 	<img id=ombreg src=images/ombre-gauche.png>
@@ -49,4 +50,14 @@
 
 	<script src="scripts/javascript.js"></script>
 
-</body></html>
+<!--
+<input id=feedback type=text value="what?" style="width:50%;height:50%;position:fixed;top:0;left:0;font:normal 30px/30px helvetica;text-align:right">
+<script> 
+
+	setInterval(function(){
+		realw = $(window).height();
+		realh = $('#masque-bas').position().top;
+		$('#feedback').val(realw+":w \n\r d:"+realh);
+	},1000);
+
+</script>--> </body></html>

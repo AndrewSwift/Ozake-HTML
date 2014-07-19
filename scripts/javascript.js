@@ -100,6 +100,8 @@
 
 //------------------------------------------------------- global variables
 
+	ratio = 3/2; // width and height of main image
+
 	// to see if window changes size, we need to keep
 	// a record of its size at all times
 	realw = $(window).width();
@@ -108,20 +110,19 @@
 	// if the screen is too narrow, we use an artificial height
 	// and put black bars above and below
 
-	if (realw/realh>1.5){ // screen is too wide
-		workw = Math.round(realh*1.5);
+	if (realw/realh>ratio){ // screen is too wide
+		workw = Math.round(realh*ratio);
 		workh = realh;
 		extrax = Math.round((realw-workw)/2);
 		extray = 0;
 	}
 	else{ // screen is too narrow
 		workw = realw;
-		workh = Math.round(realh*1.5);
+		workh = Math.round(workw/1.5);
 		extray = Math.round((realh-workh)/2);
 		extrax = 0;
 	}
 
-alert('x:'+extrax+', y:'+extray);
 //------------------------------------------------------- startup
 
 	cinema(realw,realh,workh);

@@ -73,7 +73,7 @@
 /* -------------------------------------------------- menu */
 
 	#menu{
-		font:normal 1.25vw/1.85vw Abel;
+		font-family:Abel;
 		text-align:right;
 	}
 

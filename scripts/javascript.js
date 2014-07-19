@@ -105,7 +105,7 @@
 	dimombreh = ['#ombreh','width',1700,'left',-100,'bottom'     ,500     ];
 	dimombreb = ['#ombreb','width',1700,'left',-100,'top'        ,780     ];
 
-	dimmenu    = ['#menu   ','height',550,'right',1500-380,'top',525];
+	dimmenu    = ['#menu   ','font-size',27,'right',1500-380,'top',525];
 	dimcontact = ['#contact','height',25,'right',1500-380,'top',815];
 
 	desslogo(dimlogo);

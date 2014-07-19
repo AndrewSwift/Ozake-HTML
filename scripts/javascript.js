@@ -87,8 +87,7 @@
 			x = Math.round(x * conversion + extrax);
 			y = Math.round(y * conversion + extray);
 
-			str = 'width:'+w+';'+propx+':'+x+';'+propy+':'+y;
-			str = 'border: solid 1px #0000ff; background-color: #ffff00;';
+			str = 'width:'+w+'px;'+propx+':'+x+'px;'+propy+':'+y+'px;';
 			$(obj).attr('style',str);
 
 //alert(obj);

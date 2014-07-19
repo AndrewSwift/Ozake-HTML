@@ -1,4 +1,11 @@
-//------------------------------------------------------- intro
+//------------------------------------------------------- global variables
+
+	// to see if window changes size, we need to keep
+	// a record of its size at all times
+	origw = $(window).width();
+	origh = $(window).height();
+
+//------------------------------------------------------- functions
 
 	function cinema(w,h){
 	// rajoute des barres noires dessus/dessous si la page est trop étroite
@@ -74,9 +81,6 @@
 	dessiner($(window).width(),$(window).height());
 
 	setInterval(function(){haschanged()},300);
-
-	origw = $(window).width();
-	origh = $(window).height();
 
 	function haschanged(){
 		if (origw != $(window).width() || origh != $(window).height()){

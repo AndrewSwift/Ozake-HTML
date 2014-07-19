@@ -1,6 +1,2 @@
 # vim swap files #
-*.swp
-*.swo
-*.swo
-
-scripts/.javascript.js.swo
+*.sw*

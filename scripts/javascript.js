@@ -21,15 +21,6 @@
 
 			$('#accueil').css({width:h,padding:0});
 
-			// positionnement des 2 ombres horizontales
-			// bottom of top shadow is 50% down
-			// top of bottom shadow is 78% down
-
-			bas = Math.round(h*.5);
-			$('#ombreh').css({bottom:bas});
-
-			haut = Math.round(h*.78);
-			$('#ombreb').css({top:haut});
 
 			// contact is 22.5% wide, 81.5% down, right edge is 112%
 			large = Math.round(h*.225);
@@ -110,30 +101,35 @@
 	conversion = workh/1000;
 
 
-			// positionnement des 2 ombres verticales
-			// verticals are 67% high, 25% down
-
-//			marge = extra+Math.round((4+37+100)*ratio);
-//			hauteur = Math.round(h*.67);
-//			haut = Math.round(h*.25);
-//			$('#ombred').css({left:marge,top:haut,height:hauteur});
-
-//			marge = extra+Math.round((100+9)*ratio);
-//			$('#ombreg').css({right:marge,top:haut,height:hauteur});
-
 //------------------------------------------------------- startup
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
 
 	dimlogo   = ['#logo',  'width' ,350,'right',1500-380,'bottom',1000-490];
+
 	dimombreg = ['#ombreg','height',667,'right',1500-410,'top'   ,250     ];
 	dimombred = ['#ombred','height',667,'left' ,1410    ,'top'   ,250     ];
+
+	dimombreh = ['#ombreh','width',1700,'left',-100,'bottom'     ,500     ];
+	dimombreb = ['#ombreb','width',1700,'left',-100,'top'        ,780     ];
 
 	desslogo(dimlogo);
 	desslogo(dimombreg);
 	desslogo(dimombred);
+	desslogo(dimombreh);
+	desslogo(dimombreb);
 
 //	setInterval(function(){haschanged()},300);
+
+			// positionnement des 2 ombres horizontales
+			// bottom of top shadow is 50% down
+			// top of bottom shadow is 78% down
+
+//			bas = Math.round(h*.5);
+//			$('#ombreh').css({bottom:bas});
+
+//			haut = Math.round(h*.78);
+//			$('#ombreb').css({top:haut});
 
 //------------------------------------------------------- fin

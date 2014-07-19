@@ -42,17 +42,29 @@
 			haut = Math.round(h*.78);
 			$('#ombreb').css({top:haut});
 
+			// contact is 22.5% wide, 81.5% down, right edge is 112%
+			large = Math.round(h*.225);
+			haut = Math.round(h*.815);
+			droite = extra+Math.round(h*1.12);
+			$('#contact').css({width:large,top:haut,right:droite});
+	}
+
+	function dessinerlogo(w,h){
+	// envoie le format de chaque élément de la page
+	// 4+37+100+9 = 150%
+
+			// ratio pour convertir de pourcent en pixels
+			ratio = h/100;
+
+			// montant de supp' de chaque côté de notre page
+			extra = Math.round((w-(h*1.5))/2);
+
 			// logo is 35% wide, 39% right edge is 112% in
 			large = Math.round(h*.35);
 			haut = Math.round(h*.39);
 			droite = extra+Math.round(h*1.12);
 			$('#logo').css({width:large,top:haut,right:droite});
 
-			// contact is 22.5% wide, 81.5% down, right edge is 112%
-			large = Math.round(h*.225);
-			haut = Math.round(h*.815);
-			droite = extra+Math.round(h*1.12);
-			$('#contact').css({width:large,top:haut,right:droite});
 	}
 
 	function haschanged(){
@@ -84,6 +96,7 @@
 	}
 
 	function narrow(w,h){
+	// tells if the screen is too narrow (less than 3/2) and returns a "work height" if neccesary
 		if (w/h<1.5) x = w/1.5;
 		else x = h;
 		return Math.round(x);
@@ -104,6 +117,7 @@
 
 	cinema(realw,realh,workh);
 	dessiner(realw,workh);
+	dessinerlogo(realw,workh);
 
 	setInterval(function(){haschanged()},300);
 

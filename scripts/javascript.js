@@ -79,9 +79,6 @@
 
 	function narrow(w,h){
 	// tells if the screen is too narrow (less than 3/2) and returns a "work height" if neccesary
-		if (w/h<1.5) x = w/1.5;
-		else x = h;
-		return Math.round(x);
 	}
 
 	function dessinerlogo(realw,realh,workh){
@@ -108,19 +105,23 @@
 	realw = $(window).width();
 	realh = $(window).height();
 
-	// if the screen is too wide, we use an artificial width
-	workw = Math.round((realw-(realh*1.5))/2);
-	if (realw / realh*1.5) workw = Math.round(realh*1.5);
-	else workw = realw;
-
 	// if the screen is too narrow, we use an artificial height
 	// and put black bars above and below
-	workh = narrow(realw,realh);
 
-	// offset to take into account window that is too wide or tall
-	extrax = 0;
-	extray = 0;
+	if (realw/realh>1.5){ // screen is too wide
+		workw = Math.round(realh*1.5);
+		workh = realh;
+		extrax = Math.round((realw-workw)/2);
+		extray = 0;
+	}
+	else{ // screen is too narrow
+		workw = realw;
+		workh = Math.round(realh*1.5);
+		extray = Math.round((realh-workh)/2);
+		extrax = 0;
+	}
 
+alert('x:'+extrax+', y:'+extray);
 //------------------------------------------------------- startup
 
 	cinema(realw,realh,workh);

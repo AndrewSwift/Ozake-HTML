@@ -147,7 +147,7 @@
 		$('#zoomtxt').html('');
 	}
 
-	function msdown(obj){
+	function msdown(obj,marj){
 
 		ow = obj.width;
 		oh = obj.height;
@@ -167,7 +167,8 @@
 			newh = realw*.9/or;
 		}
 
-		newp = newh*.01;
+		newp = newh * 0.01 * marj/10;
+alert(newp)
 		newm = (realh-newh)/2;
 		newm -= newp;
 

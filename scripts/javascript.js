@@ -151,8 +151,14 @@
 		wr = ww/wh;
 
 
-		if (or<wr) $('#zoomimg').css('height',realh*.9);
-		else $('#zoomimg').css('width',realw*.9);
+		if (or<wr){ // if the image is narrower than the screen, we limit the height and calculate the width
+			$('#zoomimg').css('width',realh*.7/or);
+			$('#zoomimg').css('height',realh*.7);
+		}
+		else { // if the image is shorter than the screen, we limit the width and calculate the height
+			$('#zoomimg').css('width',realw*.7);
+			$('#zoomimg').css('height',realw*.7/or);
+		}
 
 		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();

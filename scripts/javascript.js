@@ -152,15 +152,19 @@
 
 
 		if (or<wr){ // if the image is narrower than the screen, we limit the height and calculate the width
-			$('#zoomimg').css('width',realh*.9*or);
-			$('#zoomimg').css('height',realh*.9);
-			$('#zoomimg').css('margin-top',realh*.05);
+			neww = realh*.9*or;
+			newh = realh*.9;
+			newm = realh*.05;
 		}
 		else { // if the image is shorter than the screen, we limit the width and calculate the height
-			$('#zoomimg').css('width',realw*.9);
-			$('#zoomimg').css('height',realw*.9/or);
-			$('#zoomimg').css('margin-top',(realh-(realw*.9/or))/2);
+			neww = realw*.9;
+			newh = realw*.9/or;
+			newm = (realh-(realw*.9/or))/2;
 		}
+
+		$('#zoomimg').css('width',neww);
+		$('#zoomimg').css('height',newh);
+		$('#zoomimg').css('margin-top',newm);
 
 		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();

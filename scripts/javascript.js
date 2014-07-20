@@ -140,12 +140,10 @@
 
 //------------------------------------------------------- fin
 
-	function msdown(obj,vert){
+	function msdown(obj){
 //alert(realw+':'+realh);
-
+		//w = 
 		$('#zoomimg').attr('src',obj.src);
-		if(vert) $('#zoomimg').css('height','100%');
-		else $('#zoomimg').css('width','100%');
 
 		$('#zoomimg').show();
 		$('#zoom').css('width','100%');

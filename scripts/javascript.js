@@ -152,8 +152,9 @@
 
 
 		if (or<wr){ // if the image is narrower than the screen, we limit the height and calculate the width
-			$('#zoomimg').css('width',realh*.7/or);
-			$('#zoomimg').css('height',realh*.7);
+			$('#zoomimg').css('width',realh*.9*or);
+			$('#zoomimg').css('height',realh*.9);
+			$('#zoomimg').css('margin-top',realh*.05);
 		}
 		else { // if the image is shorter than the screen, we limit the width and calculate the height
 			$('#zoomimg').css('width',realw*.7);

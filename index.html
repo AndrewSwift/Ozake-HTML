@@ -33,7 +33,7 @@
 
 	<div id=scroller>
 		<img id=accueil src=images/accueil.jpg onmousedown="window.scrollBy(0,100);">
-		<img onmousedown="alert('works');" src=images/tuna.svg>
+		<img src=images/tuna.svg onmousedown="msdown(this);">
 		<img src=images/camille.svg>
 		<img src=images/love.svg>
 		<img src=images/annabelle.svg>
@@ -46,17 +46,9 @@
 
 	<div id=masque-haut></div><!-- cover when scrolling -->
 	<div id=masque-bas></div><!-- cover when scrolling -->
+	<div id=zoom></div><!-- show info about a portfolio item -->
+
 
 	<script src="scripts/javascript.js"></script>
 
-<!--
-<input id=feedback type=text value="what?" style="width:50%;height:50%;position:fixed;top:0;left:0;font:normal 30px/30px helvetica;text-align:right">
-<script> 
-
-	setInterval(function(){
-		realw = $(window).height();
-		realh = $('#masque-bas').position().top;
-		$('#feedback').val(realw+":w \n\r d:"+realh);
-	},1000);
-
-</script>--> </body></html>
+</body></html>

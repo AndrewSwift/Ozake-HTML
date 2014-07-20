@@ -157,8 +157,9 @@
 			$('#zoomimg').css('margin-top',realh*.05);
 		}
 		else { // if the image is shorter than the screen, we limit the width and calculate the height
-			$('#zoomimg').css('width',realw*.7);
-			$('#zoomimg').css('height',realw*.7/or);
+			$('#zoomimg').css('width',realw*.9);
+			$('#zoomimg').css('height',realw*.9/or);
+			$('#zoomimg').css('margin-top',realh*.05);
 		}
 
 		$('#zoomimg').attr('src',obj.src);

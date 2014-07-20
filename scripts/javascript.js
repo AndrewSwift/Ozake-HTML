@@ -158,16 +158,18 @@
 		wr = ww/wh;
 
 
-		if (or<wr){ // if the image is narrower than the screen, we limit the height and calculate the width
+		if (or<wr){ // TALL: if the image is narrower than the screen, we limit the height and calculate the width
 			neww = realh*.9*or;
 			newh = realh*.9;
 		}
-		else { // if the image is shorter than the screen, we limit the width and calculate the height
+		else { // WIDE: if the image is shorter than the screen, we limit the width and calculate the height
 			neww = realw*.9;
 			newh = realw*.9/or;
 		}
+
+		newp = newh*.01;
 		newm = (realh-newh)/2;
-		newp = 0;
+		newm -= newp;
 
 		$('#zoomimg').css('width',Math.round(neww));
 		$('#zoomimg').css('height',Math.round(newh));

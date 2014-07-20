@@ -20,8 +20,6 @@
 			$('#scroller img').css({width:h-marge,padding:marge/2});
 
 			$('#accueil').css({width:h,padding:0});
-
-
 	}
 
 	function haschanged(){
@@ -202,21 +200,22 @@
 
 		if (or<wr){ // TALL: if the image is narrower than the screen, we limit the height and calculate the width
 			newh = realh * .9;
-			newp = newh * 0.01 * marj/10;
+			newm = (realh-newh)/2;
 
-			newh -= newp;
+			newp = newh * 0.01 * marj/10;
+			newh -= newp * 2;
 			neww = newh * or;
 
-			newm = (realh-newh)/2;
 		}
 		else { // WIDE: if the image is shorter than the screen, we limit the width and calculate the height
 			neww = realw*.9;
-			newp = newh * 0.01 * marj/10;
+			newm = (realh-newh)/2;
+
+			newp = neww * 0.01 * marj/10;
 
 			neww -= newp;
 			newh = neww / or;
 
-			newm = (realh-newh)/2;
 		}
 
 		// newm -= newp;

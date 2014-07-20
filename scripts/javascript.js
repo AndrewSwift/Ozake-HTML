@@ -168,7 +168,6 @@
 		}
 
 		newp = newh * 0.01 * marj/10;
-alert(newp)
 		newm = (realh-newh)/2;
 		newm -= newp;
 

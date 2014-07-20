@@ -152,7 +152,7 @@
 
 
 		if (or<wr) $('#zoomimg').css('height',realh*.9);
-		else $('#zoomimg').css('width',realh*.9);
+		else $('#zoomimg').css('width',realw*.9);
 
 		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();

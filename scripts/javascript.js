@@ -140,6 +140,12 @@
 
 //------------------------------------------------------- fin
 
+	function msup(obj){
+		$('#zoomimg').hide();
+
+		$('#zoom').css('width','0%');
+	}
+
 	function msdown(obj){
 
 		ow = obj.width;
@@ -173,12 +179,11 @@
 		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();
 		$('#zoom').css('width','100%');
+
+		updatetext(obj);
 	}
 
-	function msup(obj){
-		$('#zoomimg').hide();
-
-		$('#zoom').css('width','0%');
+	function updatetext(obj){
+		$('#zoomtxt').attr('innerHTML','working');
 	}
-
 //------------------------------------------------------- fin

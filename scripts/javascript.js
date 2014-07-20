@@ -186,7 +186,7 @@
 
 	function updatetext(obj){
 		// $(".text").load("helloworld.txt");
-		s = obj.src + '.txt';
+		s = obj.src + '.txt?' + Math.random();
 		$("#zoomtxt").load(s);
 	}
 //------------------------------------------------------- fin

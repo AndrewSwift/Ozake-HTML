@@ -134,7 +134,10 @@
 	}
 
 	#zoomtxt{
-		background-color:#f00;
+		color:#fff;
+		background-image:url(images/opaque70.png);
+		background-repeat:no-repeat;
+		background-size:100%;
 		width:200;
 		height:200;
 		position:fixed;

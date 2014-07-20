@@ -134,7 +134,9 @@
 	}
 
 	#zoomtxt{
+		text-align:center;
 		color:#fff;
+		font:normal 0.2em/0.6em helvetica, sans-serif;
 		background-image:url(images/opaque70.png);
 		background-repeat:no-repeat;
 		background-size:100%;

@@ -142,9 +142,19 @@
 
 	function msdown(obj){
 //alert(realw+':'+realh);
-		//w = 
-		$('#zoomimg').attr('src',obj.src);
+		ow = obj.width;
+		oh = obj.height;
+		or = ow/oh;
 
+		ww = realw
+		wh = realh
+		wr = ww/wh;
+
+
+		if (or<wr) $('#zoomimg').css('height',realh*.9);
+		else $('#zoomimg').css('width',realh*.9);
+
+		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();
 		$('#zoom').css('width','100%');
 	}

@@ -202,16 +202,20 @@
 
 		if (or<wr){ // TALL: if the image is narrower than the screen, we limit the height and calculate the width
 			newh = realh * .9;
+			newp = newh * 0.01 * marj/10;
+
+			newh -= newp;
 			neww = newh * or;
 
-			newp = newh * 0.01 * marj/10;
 			newm = (realh-newh)/2;
 		}
 		else { // WIDE: if the image is shorter than the screen, we limit the width and calculate the height
 			neww = realw*.9;
+			newp = newh * 0.01 * marj/10;
+
+			neww -= newp;
 			newh = neww / or;
 
-			newp = newh * 0.01 * marj/10;
 			newm = (realh-newh)/2;
 		}
 

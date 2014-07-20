@@ -141,7 +141,7 @@
 //------------------------------------------------------- fin
 
 	function msdown(obj){
-//alert(realw+':'+realh);
+
 		ow = obj.width;
 		oh = obj.height;
 		or = ow/oh;
@@ -154,17 +154,21 @@
 		if (or<wr){ // if the image is narrower than the screen, we limit the height and calculate the width
 			neww = realh*.9*or;
 			newh = realh*.9;
-			newm = realh*.05;
+			newm = realh*.03;
+			newp = realh*.02;
 		}
 		else { // if the image is shorter than the screen, we limit the width and calculate the height
 			neww = realw*.9;
 			newh = realw*.9/or;
 			newm = (realh-(realw*.9/or))/2;
+			newp = 0.4 * newm;
+			newm = 0.6 * newm;
 		}
 
 		$('#zoomimg').css('width',neww);
 		$('#zoomimg').css('height',newh);
 		$('#zoomimg').css('margin-top',newm);
+		$('#zoomimg').css('padding',newp);
 
 		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();

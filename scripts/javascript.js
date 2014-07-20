@@ -141,13 +141,19 @@
 //------------------------------------------------------- fin
 
 	function msdown(obj,vert){
-		$('#zoomimg').show();
+//alert(realw+':'+realh);
+
 		$('#zoomimg').attr('src',obj.src);
+		if(vert) $('#zoomimg').css('height','100%');
+		else $('#zoomimg').css('width','100%');
+
+		$('#zoomimg').show();
 		$('#zoom').css('width','100%');
 	}
 
 	function msup(obj){
 		$('#zoomimg').hide();
+
 		$('#zoom').css('width','0%');
 	}
 

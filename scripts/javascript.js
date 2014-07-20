@@ -172,10 +172,14 @@
 			newm = 0.6 * newm;
 		}
 
-		$('#zoomimg').css('width',neww);
-		$('#zoomimg').css('height',newh);
-		$('#zoomimg').css('margin-top',newm);
-		$('#zoomimg').css('padding',newp);
+		$('#zoomimg').css('width',Math.round(neww));
+		$('#zoomimg').css('height',Math.round(newh));
+		$('#zoomimg').css('margin-top',Math.round(newm));
+
+//alert(newp); 77
+//alert(newm); 116
+
+//		$('#zoomimg').css('padding',Math.round(newp));
 
 		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();
@@ -189,4 +193,5 @@
 		s = obj.src + '.txt?' + Math.random();
 		$("#zoomtxt").load(s);
 	}
+
 //------------------------------------------------------- fin

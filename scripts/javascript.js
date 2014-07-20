@@ -144,6 +144,7 @@
 		$('#zoomimg').hide();
 
 		$('#zoom').css('width','0%');
+		$('#zoomtxt').html('');
 	}
 
 	function msdown(obj){
@@ -184,6 +185,8 @@
 	}
 
 	function updatetext(obj){
-		$('#zoomtxt').attr('innerHTML','working');
+		// $(".text").load("helloworld.txt");
+		s = obj.src + '.txt';
+		$("#zoomtxt").load(s);
 	}
 //------------------------------------------------------- fin

@@ -14,6 +14,7 @@
 
 	body{
 		font-size:100%;
+		-webkit-text-size-adjust: none; /* http://css-tricks.com/prevent-iphone-text-enlargement/ */
 	}
 
 	#background{
@@ -57,6 +58,7 @@
 	}
 
 	#scroller img{
+		cursor:pointer;
 		width:10px;
 		display:block;
 		background-color:#fff;
@@ -76,7 +78,7 @@
 /* -------------------------------------------------- menu */
 
 	#menu{
-		font:normal 0.25em/1.5em Abel;
+		font:normal 0.25em/1.5em Abel, serif;
 		text-align:right;
 	}
 
@@ -97,7 +99,7 @@
 
 	#contact{
 		text-align:right;
-		font:normal 0.25em/1em Abel;
+		font:normal 0.25em/1em Abel, serif;
 		vertical-align:5vw;
 		white-space:nowrap;
 	}

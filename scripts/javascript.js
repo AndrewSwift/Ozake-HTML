@@ -161,26 +161,19 @@
 		if (or<wr){ // if the image is narrower than the screen, we limit the height and calculate the width
 			neww = realh*.9*or;
 			newh = realh*.9;
-			newm = realh*.03;
-			newp = realh*.02;
 		}
 		else { // if the image is shorter than the screen, we limit the width and calculate the height
 			neww = realw*.9;
 			newh = realw*.9/or;
-			newm = (realh-(realw*.9/or))/2;
-			newp = 0.4 * newm;
-			newm = 0.6 * newm;
 		}
+		newm = (realh-newh)/2;
+		newp = 0;
 
 		$('#zoomimg').css('width',Math.round(neww));
 		$('#zoomimg').css('height',Math.round(newh));
 		$('#zoomimg').css('margin-top',Math.round(newm));
 
-//alert(newp); 77
-//alert(newm); 116
-
-//		$('#zoomimg').css('padding',Math.round(newp));
-
+		$('#zoomimg').css('padding',Math.round(newp));
 		$('#zoomimg').attr('src',obj.src);
 		$('#zoomimg').show();
 		$('#zoom').css('width','100%');

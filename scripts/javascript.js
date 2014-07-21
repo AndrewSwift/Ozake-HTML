@@ -136,6 +136,14 @@
 	desslogo(dimmenu);
 	desslogo(dimcontact);
 
+//------------------------------------------------------- descend quand on clique sur l'image d'accueil
+
+	$(document).ready(function() {
+		$("#accueil").click(function(event){
+		    $('html, body').animate({scrollTop:workh/5}, 300);
+		});
+	});
+
 //------------------------------------------------------- fin
 
 	function msup(obj){

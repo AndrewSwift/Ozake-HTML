@@ -153,42 +153,6 @@
 		$('#zoomtxt').html('');
 	}
 
-	function msdown_old(obj,marj){
-
-		ow = obj.width;
-		oh = obj.height;
-		or = ow/oh;
-
-		ww = realw
-		wh = realh
-		wr = ww/wh;
-
-
-		if (or<wr){ // TALL: if the image is narrower than the screen, we limit the height and calculate the width
-			neww = realh*.9*or;
-			newh = realh*.9;
-		}
-		else { // WIDE: if the image is shorter than the screen, we limit the width and calculate the height
-			neww = realw*.9;
-			newh = realw*.9/or;
-		}
-
-		newp = newh * 0.01 * marj/10;
-		newm = (realh-newh)/2;
-		newm -= newp;
-
-		$('#zoomimg').css('width',Math.round(neww));
-		$('#zoomimg').css('height',Math.round(newh));
-		$('#zoomimg').css('margin-top',Math.round(newm));
-
-		$('#zoomimg').css('padding',Math.round(newp));
-		$('#zoomimg').attr('src',obj.src);
-		$('#zoomimg').show();
-		$('#zoom').css('width','100%');
-
-		updatetext(obj);
-	}
-
 	function updatetext(obj){
 		// $(".text").load("helloworld.txt");
 		s = obj.src + '.txt?' + Math.random();
@@ -209,7 +173,6 @@
 		if (or<wr){ // TALL: if the image is narrower than the screen, we limit the height and calculate the width
 			newh = realh * .8;
 			newp = newh * 0.001 * marj;
-
 			newh -= newp * 2;
 
 			neww = newh * or;
@@ -219,7 +182,6 @@
 		else { // WIDE: if the image is shorter than the screen, we limit the width and calculate the height
 			neww = realw * .8;
 			newp = neww * 0.001 * marj;
-
 			neww -= newp * 2;
 
 			newh = neww / or;
